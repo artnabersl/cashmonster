@@ -49,6 +49,196 @@
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
+        .proof-img {
+            width: 100%;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e1e1e1;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .confirmation-message {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 2px solid #4caf50;
+        }
+        .confirmation-message h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        .confirmation-icon {
+            font-size: 50px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        .benefits {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #2c3e50;
+            margin: 25px 0;
+        }
+        .benefits ul {
+            padding-left: 20px;
+        }
+        .benefits li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bestätigungsnachricht (zuerst im HTML, aber standardmäßig ausgeblendet) -->
+        <div id="confirmationMessage" class="confirmation-message">
+            <div class="confirmation-icon">✓</div>
+            <h2>Thank You For Signing Up!</h2>
+            <p><strong>Important:</strong> We've sent a confirmation email to your inbox.</p>
+            <p>Please check your email now and <strong>click the verification link</strong> to activate your account and start receiving your free buyer clicks.</p>
+            <p>If you don't see the email within 2 minutes, please check your spam folder.</p>
+            <p><em>Your free traffic will start flowing immediately after confirmation!</em></p>
+        </div>
+
+        <!-- Hauptinhalt (wird nach Bestätigung ausgeblendet) -->
+        <div id="mainContent">
+            <h1>We'll Get You <span class="highlight">3,000+ FREE Verified Buyer Clicks</span> Monthly - Starting in <u>Just 20 Minutes</u>!</h1>
+            
+            <div class="urgency-banner">
+                ⚠️ WARNING: Only 7 Spots Left At This Price - Claim Yours Now!
+            </div>
+            
+            <img src="https://www.freebuyerclicksforlife.com/hosted/images/3c/2fa3b7ea214949a7b0df0acba0b5c2/SP-Proof-1.jpg" alt="Proof of Results" class="proof-img">
+            
+            <div class="benefits">
+                <h3>Here's What You'll Get:</h3>
+                <ul>
+                    <li><strong>3,000+ REAL buyer clicks</strong> delivered to your offer monthly</li>
+                    <li><strong>Zero cost</strong> - 100% free traffic (no hidden fees)</li>
+                    <li><strong>Verified buyers</strong> who are ready to purchase</li>
+                    <li><strong>Instant access</strong> - start receiving clicks in minutes</li>
+                    <li><strong>No technical skills</strong> required - set up in 2 minutes</li>
+                </ul>
+            </div>
+            
+            <form id="signupForm" method="post" action="https://www.sendsteed.com/subscribe/">
+                <input name="e108028" required type="email" placeholder="Enter Your Best Email...">
+                <input name="n108028" required type="text" placeholder="Your First Name">
+                <input type="hidden" name="lllid" value="108028">
+                <input type="hidden" name="lluid" value="sandyarta">
+                <input type="hidden" name="redirect" value="">
+                <input type="hidden" name="source" value="">
+                <button type="submit">👉 YES! SEND ME 3,000 FREE CLICKS NOW</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 1. Formular absenden (in der echten Implementierung)
+            // Hier simulieren wir nur den Erfolg
+            
+            // 2. Hauptinhalt ausblenden
+            document.getElementById('mainContent').style.display = 'none';
+            
+            // 3. Bestätigungsnachricht anzeigen
+            document.getElementById('confirmationMessage').style.display = 'block';
+            
+            // 4. Nach oben scrollen für bessere Sichtbarkeit
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // In der echten Implementierung würden Sie hier:
+            // fetch('Ihr-Backend-Endpoint', { method: 'POST', body: new FormData(this) })
+            //   .then(response => {
+            //     if(response.ok) {
+            //       document.getElementById('mainContent').style.display = 'none';
+            //       document.getElementById('confirmationMessage').style.display = 'block';
+            //     }
+            //   });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3,000+ FREE Verified Buyer Clicks Monthly - Claim Yours Now!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            border: 1px solid #e1e1e1;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .urgency-banner {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 25px 0;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
         .benefits {
             background-color: #f8f9fa;
             padding: 20px;
